@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import NavBar from './components/NavBar/NavBar';
-import Container from './components/Container/Container';
+import Container from './components/Container/Container.js';
 
 import Home from './pages/Home/Home'
 import Livros from './pages/Livros/Livros'
