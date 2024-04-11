@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom'
 import styles from './NavBar.module.css'
 
-import Container from '../Container/Container.js';
+import Container from '../Container/Container'
 
 export default function NavBar() {
     return(
