@@ -9,6 +9,16 @@
         "id": "1",
         "category": "ficçao cientifica"
       }
+    },
+    {
+      "id": "21b3",
+      "nome_livro": "Os sete maridos de Evelyn Hugo",
+      "nome_autor": "Taylor Jenkins Reid",
+      "descricao_livro": "Da chegada a Hollywood no início da década de 1950 à decisão de abandonar o mundo do espetáculo 30 anos depois, incluindo, claro está, os seus sete casamentos, a vida de Evelyn é repleta de ambição desmedida, amizades improváveis e um grande amor proibido.",
+      "category": {
+        "id": "1",
+        "category": "ficçao cientifica"
+      }
     }
   ],
   "categories": [

@@ -68,7 +68,7 @@ function NovoLivro() {
       .then(
         (data)=>{
           console.log(data)
-          navigate('/livros')
+          navigate('/livros', {state: 'Livro cadastrado com sucesso!'});
         }
       )
       .catch(
