@@ -68,7 +68,7 @@ function NovoLivro() {
       .then(
         (data)=>{
           console.log(data)
-          navigate('/livros', {state: 'Livro cadastrado com sucesso!'});
+          navigate('/Livros', {state: 'Livro cadastrado com sucesso!'});
         }
       )
       .catch(
@@ -96,7 +96,7 @@ function NovoLivro() {
             name="nome_livro"
             id="nome_livro"
             placeholder="Digite o titulo do livro"
-            text="Digite o titulo do livro"
+            text="Digite o título do livro:"
             handlerOnChange={handlerChangeBook}
         />
 
@@ -108,7 +108,7 @@ function NovoLivro() {
             name="nome_autor"
             id="nome_autor"
             placeholder="Digite o nome do autor"
-            text="Digite o nome do autor"
+            text="Digite o nome do autor:"
             handlerOnChange={handlerChangeBook}
         />
 
@@ -122,13 +122,13 @@ function NovoLivro() {
             name="descricao_livro"
             id="descricao_livro"
             placeholder="Digite a descricao do livro"
-            text="digite a descricao do livro"
+            text="Digite a descrição do livro:"
             handlerOnChange={handlerChangeBook}
         />
 
         <Select
             name="categoria-id"
-            text="selecione a categoria do livro"
+            text="Selecione a categoria do livro:"
             options={categories}
             handlerOnChange={handlerChangeCategory}
         />

@@ -19,6 +19,16 @@
         "id": "1",
         "category": "ficçao cientifica"
       }
+    },
+    {
+      "id": "7273",
+      "nome_livro": "a",
+      "nome_autor": "a",
+      "descricao_livro": "a",
+      "category": {
+        "id": "1",
+        "category": "ficçao cientifica"
+      }
     }
   ],
   "categories": [

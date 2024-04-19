@@ -14,14 +14,14 @@ function Livros() {
   }
   return (
     <section className={styles.livros_container}>
-      <h1>Aqui vai ser listado seus <span>livros</span></h1>
+      <h1>Aqui serão listados seus<span>livros</span></h1>
 
       {
         message && (
-          <Message
-            msg={message}
-            type='sucess'
-          />
+            <Message
+                msg={message}
+                type='sucess'
+            />
         )
       }
     </section>
