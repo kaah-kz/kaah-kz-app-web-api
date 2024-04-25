@@ -24,7 +24,7 @@ function NovoLivro() {
         {
             method: 'GET',
             headers: {
-                'Content-Type': 'aplication/json',
+                'Content-Type': 'application/json',
             },
         }).then((resp) =>resp.json()
         ).then(

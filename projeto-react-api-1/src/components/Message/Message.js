@@ -6,7 +6,7 @@ function Message({type, msg}){
 
     useEffect(()=>{
 
-        if(!msg){
+        if([!msg]){
             setVisible(false);
             return;
         }

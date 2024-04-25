@@ -16,25 +16,25 @@
       "nome_autor": "Taylor Jenkins Reid",
       "descricao_livro": "Da chegada a Hollywood no início da década de 1950 à decisão de abandonar o mundo do espetáculo 30 anos depois, incluindo, claro está, os seus sete casamentos, a vida de Evelyn é repleta de ambição desmedida, amizades improváveis e um grande amor proibido.",
       "category": {
-        "id": "1",
-        "category": "ficçao cientifica"
+        "id": "6",
+        "category": "Romance"
       }
     },
     {
-      "id": "7273",
-      "nome_livro": "a",
-      "nome_autor": "a",
-      "descricao_livro": "a",
+      "id": "3d01",
+      "descricao_livro": "Quando Tate Collins se muda para o apartamento do irmão, em São Francisco, pronta a se dedicar ao mestrado em enfermagem, não imagina estar prestes a conhecer o lado feio do amor. Um relacionamento em que companheirismo e cumplicidade não são prioridades. E o sexo parece ser o único objetivo.",
       "category": {
-        "id": "1",
-        "category": "ficçao cientifica"
-      }
+        "id": "6",
+        "category": "Romance"
+      },
+      "nome_livro": "O lado feio do amor",
+      "nome_autor": "Colleen Hoover"
     }
   ],
   "categories": [
     {
       "id": "1",
-      "name": "ficçao cientifica"
+      "name": "Ficção científica"
     },
     {
       "id": "2",
@@ -42,7 +42,7 @@
     },
     {
       "id": "3",
-      "name": "Front end"
+      "name": "Front-End"
     },
     {
       "id": "4",
@@ -50,7 +50,11 @@
     },
     {
       "id": "5",
-      "name": "Computaçao em cloud"
+      "name": "Computação em cloud"
+    },
+    {
+      "id": "6",
+      "name": "Romance"
     }
   ]
 }
