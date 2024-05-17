@@ -11,6 +11,9 @@ function Livros() {
 
   const [books, setBooks] = useState([]);
 
+  //ESTADO DE DADOS DA MENSAGEM DE EXCLUSÃO DE LIVRO
+  const[bookMessage, setBookMessage] = useState('');
+
   useEffect(()=>{
       fetch('http://localhost:5000/books', {
         method: 'GET',
@@ -24,6 +27,25 @@ function Livros() {
 
   })
 
+  //FUNÇÃO DE EXCLUSÃO DE LIVRO
+  function removeBooks(id) {
+    fetch(`http://localhost:5000/books/${id}`,{
+      method: 'DELETE',
+      headers: {
+        'Content-Type':'application/json'
+      },
+    })
+    .then(resp=> resp.json())
+    .then(
+      (data)=>{
+        setBooks(books.filter((book_data)=>book_data.id !== id))
+        // alert('LIVRO EXCLUÍDO')
+        setBookMessage('LIVRO EXCLUÍDO COM SUCESSO!');
+      }
+    )
+    .catch(err=>console(err));
+  }
+
   const location = useLocation();
   let message = '';
 
@@ -36,13 +58,22 @@ function Livros() {
     <section className={styles.livros_container}>
       <h1>Aqui serão listados seus<span>livros</span></h1>
 
+      {/* MENSAGEM DE SUCESSO PARA CADASTRO */}
       {
-        message && (
+        message &&
             <Message
                 msg={message}
                 type='sucess'
             />
-        )
+      }
+
+      {/* MENSAGEM DE SUCESSO PARA EXCLUSÃO */}
+      {
+        bookMessage &&
+            <Message
+                msg={bookMessage}
+                type='sucess'
+            />
       }
 
       {/* <Container> */}
@@ -68,13 +99,16 @@ function Livros() {
         </CardBook> */}
       {/* </Container> */}
       
+      
       {
         books.map((book)=>(
           <CardBook
               id={book.id}
               livro={book.nome_livro}
               autor={book.nome_autor}
-              categoria={book.category.category}>
+              categoria={book.category.category}
+              key={book.id}
+              handlerRemove={removeBooks}>
           </CardBook>
         ))
       }

@@ -19,7 +19,7 @@ function Message({type, msg}){
 
         return () => {clearTimeout(timer)}
 
-    }, [])
+    }, [msg])
 
     return(
         <>

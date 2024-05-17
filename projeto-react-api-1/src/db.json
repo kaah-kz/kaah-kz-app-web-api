@@ -1,34 +1,33 @@
 {
   "books": [
     {
-      "id": "5894",
-      "nome_livro": "As Cavernas de Aço",
-      "nome_autor": "Isaac Azimov",
-      "descricao_livro": "Uma obra da série dos robôs",
+      "id": "f3de",
+      "nome_livro": "a",
+      "nome_autor": "a",
+      "descricao_livro": "a",
+      "category": {
+        "id": "2",
+        "category": "Back-End"
+      }
+    },
+    {
+      "id": "c090",
+      "nome_livro": "a",
+      "nome_autor": "a",
+      "descricao_livro": "a",
+      "category": {
+        "id": "2",
+        "category": "Back-End"
+      }
+    },
+    {
+      "id": "81d6",
+      "nome_livro": "a",
+      "nome_autor": "a",
       "category": {
         "id": "1",
-        "category": "ficçao cientifica"
+        "category": "Ficção científica"
       }
-    },
-    {
-      "id": "21b3",
-      "nome_livro": "Os sete maridos de Evelyn Hugo",
-      "nome_autor": "Taylor Jenkins Reid",
-      "descricao_livro": "Da chegada a Hollywood no início da década de 1950 à decisão de abandonar o mundo do espetáculo 30 anos depois, incluindo, claro está, os seus sete casamentos, a vida de Evelyn é repleta de ambição desmedida, amizades improváveis e um grande amor proibido.",
-      "category": {
-        "id": "6",
-        "category": "Romance"
-      }
-    },
-    {
-      "id": "3d01",
-      "descricao_livro": "Quando Tate Collins se muda para o apartamento do irmão, em São Francisco, pronta a se dedicar ao mestrado em enfermagem, não imagina estar prestes a conhecer o lado feio do amor. Um relacionamento em que companheirismo e cumplicidade não são prioridades. E o sexo parece ser o único objetivo.",
-      "category": {
-        "id": "6",
-        "category": "Romance"
-      },
-      "nome_livro": "O lado feio do amor",
-      "nome_autor": "Colleen Hoover"
     }
   ],
   "categories": [
