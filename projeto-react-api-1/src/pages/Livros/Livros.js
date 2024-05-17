@@ -22,10 +22,10 @@ function Livros() {
         }
       })
       .then((resp)=>resp.json())
-      .then((data)=>setBooks(data))
+      .then((data)=>{setBooks(data)})
       .catch((err)=>{console.log(err)});
 
-  })
+  },[books]);
 
   //FUNÇÃO DE EXCLUSÃO DE LIVRO
   function removeBooks(id) {
@@ -38,7 +38,7 @@ function Livros() {
     .then(resp=> resp.json())
     .then(
       (data)=>{
-        setBooks(books.filter((book_data)=>book_data.id !== id))
+        // setBooks(books.filter((book_data)=>book_data.id !== id))
         // alert('LIVRO EXCLUÍDO')
         setBookMessage('LIVRO EXCLUÍDO COM SUCESSO!');
       }
@@ -47,9 +47,9 @@ function Livros() {
   }
 
   const location = useLocation();
-  let message = '';
+  let message = ''
 
-  console.log('location state: ' + location.state);
+  console.log('LOCATION STATE: ' + location.state);
 
   if (location.state){
     message = location.state;
