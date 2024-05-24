@@ -3,6 +3,8 @@ import styles from './EditarLivro.module.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { useNavigate } from 'react-router-dom';
+
 import Input from '../../components/Input/Input';
 import Select from '../../components/Select/Select';
 
@@ -14,6 +16,9 @@ function EditarLivro(params) {
     // RECUPERANDO O ID DA URL
     const {id} = useParams();
     console.log('ID:' + id);
+
+    // OBJETO DE NAVEGAÇÃO
+    const navigate = useNavigate();
 
     const[book, setBook] = useState({});
 
@@ -67,13 +72,35 @@ function EditarLivro(params) {
           category: event.target.options[event.target.selectedIndex].text
         }});
       }
-      console.log(book);
-  
+      // console.log(book);
+      
+    //FUNCIONALIDADE DE EDIÇÃO DE LIVRO
+    function editBook(book) {
+      fetch(`http://localhost:5000/books/${book.id}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type':'application/json'
+          },
+          body: JSON.stringify(book)
+      })
+      .then(resp=>resp.json())
+      .then((data)=>{
+        setBook(data);
+        navigate('/Livros', {state: 'Livro alterado com sucesso!'})
+      })
+      .catch(err=>(console.log(err)));
+    }
+
+    // FUNÇÃO DE SUBMIT CONTROLADO DOS DADOS
+    function submit(event){
+      event.preventDefault();
+      editBook(book);
+    }
 
     return(
     <div className={styles.book_container}>
         <h1>EDIÇÃO DE LIVROS!</h1>
-        <form>
+        <form onSubmit={submit}>
             <Input
                 type="text"
                 name="nome_livro"
@@ -100,7 +127,7 @@ function EditarLivro(params) {
                 id="descricao_livro"
                 placeholder="Digite a descricao do livro"
                 text="Digite a descrição do livro:"
-                value={book.descricao}
+                value={book.descricao_livro}
                 handlerOnChange={handlerChangeBook}
             />
 
@@ -111,9 +138,11 @@ function EditarLivro(params) {
                 handlerOnChange={handlerChangeCategory}
             />
 
+            <p><Input type='submit' value='Editar Livro'/></p>
+
         </form>
     </div>
-    );
+  );
 }
 
 export default EditarLivro;

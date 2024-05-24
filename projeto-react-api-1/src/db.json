@@ -1,73 +1,25 @@
 {
-  "books": [
-    {
-      "id": "a12f",
-      "nome_livro": "a",
-      "nome_autor": "a",
-      "descricao_livro": "a",
-      "category": {
-        "id": "3",
-        "category": "Front-End"
-      }
-    },
-    {
-      "id": "92d3"
-    },
-    {
-      "id": "359d",
-      "nome_livro": "a",
-      "nome_autor": "a",
-      "descricao_livro": "a",
-      "category": {
-        "id": "1",
-        "category": "Ficção científica"
-      }
-    },
-    {
-      "id": "578b",
-      "nome_livro": "a",
-      "nome_autor": "a",
-      "descricao_livro": "a",
-      "category": {
-        "id": "1",
-        "category": "Ficção científica"
-      }
-    },
-    {
-      "id": "53b2",
-      "nome_livro": "a",
-      "nome_autor": "a",
-      "descricao_livro": "a",
-      "category": {
-        "id": "1",
-        "category": "Ficção científica"
-      }
-    }
-  ],
+  "books": [],
   "categories": [
     {
       "id": "1",
-      "name": "Ficção científica"
+      "name": "FICÇÃO CIENTIFICA"
     },
     {
       "id": "2",
-      "name": "Back-End"
+      "name": "BACK-END"
     },
     {
       "id": "3",
-      "name": "Front-End"
+      "name": "FRONT-END"
     },
     {
       "id": "4",
-      "name": "Banco de Dados"
+      "name": "BANCO DE DADOS"
     },
     {
       "id": "5",
-      "name": "Computação em cloud"
-    },
-    {
-      "id": "6",
-      "name": "Romance"
+      "name": "CLOUD COMPUTING"
     }
   ]
 }
