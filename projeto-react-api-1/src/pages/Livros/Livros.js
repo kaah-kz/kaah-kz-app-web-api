@@ -32,7 +32,7 @@ function Livros() {
 
   //FUNÇÃO DE EXCLUSÃO DE LIVRO
   function removeBooks(id) {
-    fetch(`http://localhost:5000/books/${id}`,{
+    fetch(`http://localhost:5000/excluirLivro/${id}`,{
       method: 'DELETE',
       headers: {
         'Content-Type':'application/json'
@@ -106,11 +106,11 @@ function Livros() {
       {
         books.map((book)=>(
           <CardBook
-              id={book.id}
+              id={book.cod_livro}
               livro={book.nome_livro}
-              autor={book.nome_autor}
-              categoria={book.category.category}
-              key={book.id}
+              autor={book.autor_livro}
+              // categoria={book.category.category}
+              key={book.cod_livro}
               handlerRemove={removeBooks}>
           </CardBook>
         ))
