@@ -18,25 +18,25 @@ function NovoLivro() {
   const [book, setBook] = useState({});
 
   // RECUPERA OS DADOS DE CATEGORIA DO ARQUIVO db.json
-  useEffect(()=>{
-    fetch
-        ('http://localhost:5000/categories',
-        {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }).then((resp) =>resp.json()
-        ).then(
-          (data)=>{
-            setCategories(data)
-            console.log(data)
-          }
-        )
-      .catch((error) => {
-        console.log(error)
-      })
-  },[])
+  // useEffect(()=>{
+  //   fetch
+  //       ('http://localhost:5000/categories',
+  //       {
+  //           method: 'GET',
+  //           headers: {
+  //               'Content-Type': 'application/json',
+  //           },
+  //       }).then((resp) =>resp.json()
+  //       ).then(
+  //         (data)=>{
+  //           setCategories(data)
+  //           console.log(data)
+  //         }
+  //       )
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  // },[])
 
   // HANDLER DE CAPTURA DOS DADOS DE INPUT (NOME, LIVRO, AUTOR, DESCRIÇÃO)
     function handlerChangeBook(event) {
@@ -55,10 +55,13 @@ function NovoLivro() {
 
     /* INSERÇÃO DOS DADOS DE LIVRO */
     function createBook(book) {
-      fetch('http://localhost:5000/books', {
+      fetch('http://localhost:5000/inserirLivro', {
         method: 'POST',
+        mode:'cors',
             headers: {
-                'Content-Type': 'aplication/json',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Headers':'*'
             },
             body: JSON.stringify(book)
       })
@@ -68,7 +71,7 @@ function NovoLivro() {
       .then(
         (data)=>{
           console.log(data)
-          navigate('/Livros', {state: 'Livro cadastrado com sucesso!'});
+          navigate('/Livros', {state: 'LIVRO CADASTRADO COM SUCESSO!'});
         }
       )
       .catch(
@@ -105,8 +108,8 @@ function NovoLivro() {
         </p> */}
         <Input
             type="text"
-            name="nome_autor"
-            id="nome_autor"
+            name="autor_livro"
+            id="autor_livro"
             placeholder="Digite o nome do autor"
             text="Digite o nome do autor:"
             handlerOnChange={handlerChangeBook}

@@ -15,16 +15,19 @@ function Livros() {
   const[bookMessage, setBookMessage] = useState('');
 
   useEffect(()=>{
-      fetch('http://localhost:5000/books', {
+      fetch('http://localhost:5000/listagemLivros', {
         method: 'GET',
-        headers: {
-          'Content-Type':'application/json'
-        }
+        mode:'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Headers':'*'
+            },
       })
       .then((resp)=>resp.json())
       .then((data)=>{
         // console.log(data)
-        setBooks(data)
+        setBooks(data.data)
         console.log('TESTE - ' + books)
       })
       .catch((err)=>{console.log(err)});
@@ -41,7 +44,7 @@ function Livros() {
     .then(resp=> resp.json())
     .then(
       (data)=>{
-        setBooks(books.filter((book_data)=>book_data.id !== id))
+        setBooks(books.filter((book_data)=>book_data.cod_livro !== id))
         // alert('LIVRO EXCLUÍDO')
         setBookMessage('LIVRO EXCLUÍDO COM SUCESSO!');
       }
